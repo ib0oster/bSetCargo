@@ -1,0 +1,51 @@
+#
+# bSetCargo versão 1.0
+# Criador: iBoosterr_
+#
+# placeholders = %player% : jogador que vai receber o cargo
+# disponivel em: Command, Lore, setcargo
+#
+
+Settings:
+  starter: "&e■ "
+
+Messages:
+  noargs: "&cUtilize /setcargo <usuario>"
+  noperm: "&fComando desconhecido."
+  reload: "&aO plugin foi recarregado com sucesso."
+  setcargo: "&eSetando cargo para &f%player%&e, listando cargos..."
+  bsc:
+    - ""
+    - "&6&lBSETCARGO &8&l➟&e Ajuda"
+    - "&e/setcargo&8&l ➟ &7Setar um cargo."
+    - "&e/bsc reload&8&l ➟&7 Recarregar o plugin."
+    - ""
+
+Roles:
+  1:
+    Name: "&6Master"
+    Command: "/lp user %player% parent add master"
+    Lore:
+      - "          &6&lBSETCARGO\n"
+      - "&eSetando cargo &l➟ &6Master\n"
+      - "&eJogador &l➟ &f%player%\n"
+      - "\n"
+      - "&aClique aqui para setar o cargo."
+  2:
+    Name: "&4Gerente"
+    Command: "/lp user %player% parent add gerente"
+    Lore:
+      - "          &6&lBSETCARGO\n"
+      - "&eSetando cargo &l➟ &4Gerente\n"
+      - "&eJogador &l➟ &f%player%\n"
+      - "\n"
+      - "&aClique aqui para setar o cargo."
+  3:
+    Name: "&cAdmin"
+    Command: "/lp user %player% parent add admin"
+    Lore:
+      - "          &6&lBSETCARGO\n"
+      - "&eSetando cargo &l➟ &cAdmin\n"
+      - "&eJogador &l➟ &f%player%\n"
+      - "\n"
+      - "&aClique aqui para setar o cargo."
