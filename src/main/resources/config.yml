@@ -3,9 +3,8 @@
 # Criador: iBoosterr_
 #
 ## placeholders
-# %player% : jogador que vai receber o cargo
-# %p-prefix% : prefixo do jogador que vai receber o cargo (necessita de vault)
-# disponivel em: Command, Lore, setcargo
+# %player% : jogador que vai receber o cargo // setcargo, Lore, Command
+# %p-prefix% : prefixo do jogador que vai receber o cargo (necessita de vault) // setcargo, Lore
 ##
 
 Settings:
@@ -31,7 +30,7 @@ Roles:
     Lore:
       - "          &6&lBSETCARGO\n"
       - "&eSetando cargo &l➟ &6Master\n"
-      - "&eJogador &l➟ &f%player%\n"
+      - "&eJogador &l➟ %p-prefix%&f%player%\n"
       - "\n"
       - "&aClique aqui para setar o cargo."
   2:
@@ -40,7 +39,7 @@ Roles:
     Lore:
       - "          &6&lBSETCARGO\n"
       - "&eSetando cargo &l➟ &4Gerente\n"
-      - "&eJogador &l➟ &f%player%\n"
+      - "&eJogador &l➟ %p-prefix%&f%player%\n"
       - "\n"
       - "&aClique aqui para setar o cargo."
   3:
@@ -49,6 +48,6 @@ Roles:
     Lore:
       - "          &6&lBSETCARGO\n"
       - "&eSetando cargo &l➟ &cAdmin\n"
-      - "&eJogador &l➟ &f%player%\n"
+      - "&eJogador &l➟ %p-prefix%&f%player%\n"
       - "\n"
       - "&aClique aqui para setar o cargo."

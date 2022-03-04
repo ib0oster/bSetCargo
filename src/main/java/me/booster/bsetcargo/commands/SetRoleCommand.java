@@ -35,7 +35,7 @@ public class SetRoleCommand implements CommandExecutor {
             for (String roles : Main.getInstance().getConfig().getConfigurationSection("Roles").getKeys(false)) {
                 String names = Main.getInstance().getConfig().getString("Settings.starter").replace("&", "§") + Main.getInstance().getConfig().getString("Roles." + roles + ".Name").replace("&", "§");
                 String commands = Main.getInstance().getConfig().getString("Roles." + roles + ".Command").replace("%player%", args[0]);
-                String lores = String.join(" ", Main.getInstance().getConfig().getStringList("Roles." + roles + ".Lore")).replace("&", "§").replace("%player%", args[0]);
+                String lores = String.join(" ", Main.getInstance().getConfig().getStringList("Roles." + roles + ".Lore")).replace("%player%", args[0]).replace("%p-prefix%",  Main.getChat().getPlayerPrefix(p2)).replace("&", "§");
 
                 JsonAPI.sendCommandText(p, names, lores, commands);
 
