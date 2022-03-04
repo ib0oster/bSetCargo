@@ -2,9 +2,11 @@
 # bSetCargo versão 1.0
 # Criador: iBoosterr_
 #
-# placeholders = %player% : jogador que vai receber o cargo
+## placeholders
+# %player% : jogador que vai receber o cargo
+# %p-prefix% : prefixo do jogador que vai receber o cargo (necessita de vault)
 # disponivel em: Command, Lore, setcargo
-#
+##
 
 Settings:
   starter: "&e■ "
@@ -13,7 +15,8 @@ Messages:
   noargs: "&cUtilize /setcargo <usuario>"
   noperm: "&fComando desconhecido."
   reload: "&aO plugin foi recarregado com sucesso."
-  setcargo: "&eSetando cargo para &f%player%&e, listando cargos..."
+  needonline: "&cO jogador precisa estar online."
+  setcargo: "&eSetando cargo para %p-prefix%&f%player%&e, listando cargos..."
   bsc:
     - ""
     - "&6&lBSETCARGO &8&l➟&e Ajuda"

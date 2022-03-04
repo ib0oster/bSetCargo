@@ -1,6 +1,7 @@
 name: bSetCargo
 version: 1.0-SNAPSHOT
 author: iBoosterr_
+softdepend: [Vault]
 
 main: me.booster.bsetcargo.Main
 commands:

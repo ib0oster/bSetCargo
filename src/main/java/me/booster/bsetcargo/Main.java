@@ -2,25 +2,27 @@ package me.booster.bsetcargo;
 
 import me.booster.bsetcargo.commands.BSCCommand;
 import me.booster.bsetcargo.commands.SetRoleCommand;
+import net.milkbowl.vault.chat.Chat;
+import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
+@SuppressWarnings("all")
 public class Main extends JavaPlugin {
 
+    private static Chat chat = null;
     public static Main instance;
 
 
     public void onEnable() {
 
         setup();
+        this.getLogger().info("Plugin inicializado com sucesso.");
 
-        c("");
-        c("bSetCargo inicializado com sucesso.");
-        c("Versão: 1.0 / Criador: iBoosterr_");
-        c("");
     }
 
     private void setup() {
 
+        setupChat();
         saveDefaultConfig();
         instance = this;
 
@@ -29,14 +31,18 @@ public class Main extends JavaPlugin {
 
     }
 
-    private void c(String mensagemfoda) {
-
-        this.getLogger().info(mensagemfoda);
-
-    }
-
     public static Main getInstance() {
         return instance;
+    }
+
+    private boolean setupChat() {
+        RegisteredServiceProvider<Chat> rsp = getServer().getServicesManager().getRegistration(Chat.class);
+        chat = rsp.getProvider();
+        return chat != null;
+    }
+
+    public static Chat getChat() {
+        return chat;
     }
 
 }

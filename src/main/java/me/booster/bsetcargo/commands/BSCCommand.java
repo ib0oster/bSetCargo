@@ -16,10 +16,8 @@ public class BSCCommand implements CommandExecutor {
         }
 
         if (args.length < 1) {
-            for (String bsc : Main.getInstance().getConfig().getStringList("Messages.bsc")) {
-                sender.sendMessage(bsc.replace("&", "§"));
-
-            }
+            String bsc = String.join(" " + Main.getInstance().getConfig().getStringList("Messages.bsc")).replace("&", "§");
+            sender.sendMessage(bsc);
             return true;
         }
 
@@ -29,10 +27,9 @@ public class BSCCommand implements CommandExecutor {
             return true;
         }
 
-        for (String bsc : Main.getInstance().getConfig().getStringList("Messages.bsc")) {
-            sender.sendMessage(bsc.replace("&", "§"));
+        String bsc = String.join(" " + Main.getInstance().getConfig().getStringList("Messages.bsc")).replace("&", "§");
+            sender.sendMessage(bsc);
 
-        }
 
         return true;
     }
