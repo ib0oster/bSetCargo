@@ -1,5 +1,5 @@
 #
-# bSetCargo versão 1.0
+# bSetCargo versão 1.2
 # Criador: iBoosterr_
 #
 ## placeholders
@@ -7,15 +7,15 @@
 # %p-prefix% : prefixo do jogador que vai receber o cargo (necessita de vault) // setcargo, Lore
 ##
 
-Settings:
+settings:
   starter: "&e■ "
 
-Messages:
-  noargs: "&cUtilize /setcargo <usuario>"
-  noperm: "&fComando desconhecido."
+messages:
+  noArgs: "&cUtilize /setcargo <usuario>"
+  noPermission: "&fComando desconhecido."
   reload: "&aO plugin foi recarregado com sucesso."
-  needonline: "&cO jogador precisa estar online."
-  setcargo: "&eSetando cargo para %p-prefix%&f%player%&e, listando cargos..."
+  needOnline: "&cO jogador precisa estar online."
+  setRole: "&eSetando cargo para %p-prefix%&f%player%&e, listando cargos..."
   bsc:
     - ""
     - "&6&lBSETCARGO &8&l➟&e Ajuda"
@@ -23,31 +23,34 @@ Messages:
     - "&e/bsc reload&8&l ➟&7 Recarregar o plugin."
     - ""
 
-Roles:
+roles:
   1:
-    Name: "&6Master"
-    Command: "/lp user %player% parent add master"
-    Lore:
+    name: "&6Master"
+    permission: "role.master"
+    lore:
       - "          &6&lBSETCARGO\n"
       - "&eSetando cargo &l➟ &6Master\n"
       - "&eJogador &l➟ %p-prefix%&f%player%\n"
       - "\n"
       - "&aClique aqui para setar o cargo."
+    command: "/lp user %player% parent add master"
   2:
-    Name: "&4Gerente"
-    Command: "/lp user %player% parent add gerente"
-    Lore:
+    name: "&4Gerente"
+    permission: "role.gerente"
+    lore:
       - "          &6&lBSETCARGO\n"
       - "&eSetando cargo &l➟ &4Gerente\n"
       - "&eJogador &l➟ %p-prefix%&f%player%\n"
       - "\n"
       - "&aClique aqui para setar o cargo."
+    command: "/lp user %player% parent add master"
   3:
-    Name: "&cAdmin"
-    Command: "/lp user %player% parent add admin"
-    Lore:
+    name: "&cAdmin"
+    permission: "role.admin"
+    lore:
       - "          &6&lBSETCARGO\n"
       - "&eSetando cargo &l➟ &cAdmin\n"
       - "&eJogador &l➟ %p-prefix%&f%player%\n"
       - "\n"
       - "&aClique aqui para setar o cargo."
+    command: "/lp user %player% parent add master"

@@ -15,19 +15,13 @@ public class Main extends JavaPlugin {
 
     public void onEnable() {
 
-        setup();
-        this.getLogger().info("Plugin inicializado com sucesso.");
-
-    }
-
-    private void setup() {
-
         setupChat();
         saveDefaultConfig();
         instance = this;
-
         this.getCommand("setcargo").setExecutor(new SetRoleCommand());
         this.getCommand("bsc").setExecutor(new BSCCommand());
+
+        this.getLogger().info("Plugin inicializado com sucesso.");
 
     }
 

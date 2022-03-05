@@ -11,12 +11,12 @@ public class BSCCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command c, String lbl, String[] args) {
 
         if (!sender.hasPermission("bsc.bsc")) {
-            sender.sendMessage(Main.getInstance().getConfig().getString("Messages.noperm"));
+            sender.sendMessage(Main.getInstance().getConfig().getString("messages.noPermission"));
             return true;
         }
 
         if (args.length < 1) {
-            for (String bsc1 : Main.getInstance().getConfig().getStringList("Messages.bsc")) {
+            for (String bsc1 : Main.getInstance().getConfig().getStringList("messages.bsc")) {
                 String bsc = bsc1.replace("&", "§");
 
                 sender.sendMessage(bsc);
@@ -27,11 +27,11 @@ public class BSCCommand implements CommandExecutor {
 
         if (args[0].equalsIgnoreCase("reload")) {
             Main.getInstance().reloadConfig();
-            sender.sendMessage(Main.getInstance().getConfig().getString("Messages.reload").replace("&", "§"));
+            sender.sendMessage(Main.getInstance().getConfig().getString("messages.reload").replace("&", "§"));
             return true;
         }
 
-        for (String bsc1 : Main.getInstance().getConfig().getStringList("Messages.bsc")) {
+        for (String bsc1 : Main.getInstance().getConfig().getStringList("messages.bsc")) {
             String bsc = bsc1.replace("&", "§");
 
             sender.sendMessage(bsc);
